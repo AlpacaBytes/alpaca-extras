@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AlpacaExtrasDemo"
+             xmlns:alpaca="clr-namespace:AlpacaExtras.Views;assembly=AlpacaExtras"
+             x:Class="AlpacaExtrasDemo.MainPage">
+
+    <StackLayout>
+        <!--<alpaca:Button x:Name="btn" Title="Test"/>
+        <alpaca:Button Title="Test" FillColor="Orange"/>
+        <alpaca:Button Title="Test" TextColor="Green" BorderColor="Red" FontSize="32" HorizontalOptions="Center" Padding="40"/>
+        <alpaca:Button Title="Test" TextColor="Green" BorderColor="Red" FontSize="32" BorderThickness="5"/>-->
+        <alpaca:Button Title="Test" FillColor="Orange" TextColor="Green" BorderColor="Red" FontSize="32" BorderThickness="5"/>
+
+        <StackLayout Orientation="Horizontal"  VerticalOptions="Center" HorizontalOptions="Center" >
+            <alpaca:Button Title="16 OZ." FillColor="#DBDBDB" TextColor="White" FontSize="12" Padding="7"/>
+            <alpaca:Button Title="24 OZ." FillColor="#DBDBDB" TextColor="White" FontSize="12" Padding="7,3" FontFamily="Ubuntu"/>
+            <alpaca:Button x:Name="btn" Title="32 OZ." FillColor="#A2A6F4" TextColor="White" FontSize="12" Padding="7,3" HeightRequest="-1" FontFamily="Ubuntu" />
+        </StackLayout>
+
+        <alpaca:ToggleButton Title="Toggle Button" FillColor="#DBDBDB" TextColor="White" FontSize="12" Padding="7,3" OnFillColor="Blue" OffFillColor="Green" OnTextColor="White" OffTextColor="White"/>
+
+        <alpaca:RadioGroup HorizontalOptions="Start" DefaultValue="3" >
+            <alpaca:RadioButton Title="1" Value="1" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3"/>
+            <alpaca:RadioButton Title="2" Value="2" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3"/>
+            <alpaca:RadioButton Title="3" Value="3" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3"/>
+            <alpaca:RadioButton Title="4" Value="4" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3"/>
+            <alpaca:RadioButton Title="5" Value="5" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3"/>
+        </alpaca:RadioGroup>
+
+    </StackLayout>
+
+</ContentPage>
