@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 using Foundation;
 using UIKit;
@@ -22,6 +23,8 @@ namespace AlpacaExtrasDemo.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            AlpacaExtras.AlpacaExtras.Init(this.GetType().Assembly, (float)UIScreen.MainScreen.Scale);
+
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 

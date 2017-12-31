@@ -127,8 +127,12 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\AlpacaExtrasDemo\AlpacaExtrasDemo.csproj">
-      <Project>{D708E601-0EFB-479B-9B04-54A9C8129347}</Project>
+      <Project>{F423DD56-5DE2-405E-98E2-1B5FE7B6DCB1}</Project>
       <Name>AlpacaExtrasDemo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\AlpacaExtras\AlpacaExtras.csproj">
+      <Project>{BF4D545E-75D2-482B-9361-A1042035CB01}</Project>
+      <Name>AlpacaExtras</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

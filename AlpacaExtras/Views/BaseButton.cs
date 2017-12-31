@@ -65,8 +65,11 @@ namespace AlpacaExtras.Views
 
             if (FontFamily != null)
             {
-                var font = AlpacaExtras.Assets[FontFamily];
-                paint.Typeface = SKTypeface.FromData(SKData.CreateCopy(font.Value));
+                if (AlpacaExtras.Assets.ContainsKey(FontFamily))
+                {
+                    var font = AlpacaExtras.Assets[FontFamily];
+                    paint.Typeface = SKTypeface.FromData(SKData.CreateCopy(font.Value));
+                }
             }
 
             SKRect textBounds = new SKRect();
@@ -126,7 +129,7 @@ namespace AlpacaExtras.Views
                     TextAlign = SKTextAlign.Left
                 };
 
-                if (FontFamily != null)
+                if (FontFamily != null && AlpacaExtras.Assets.ContainsKey(FontFamily))
                 {
                     var font = AlpacaExtras.Assets[FontFamily];
                     paint.Typeface = SKTypeface.FromData(SKData.CreateCopy(font.Value));

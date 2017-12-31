@@ -2,11 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>AlpacaExtras</PackageId>
+    <PackageVersion>0.1</PackageVersion>
+    <Authors>John Harris</Authors>
+    <Owners>John Harris</Owners>
+    <PackageProjectUrl>https://github.com/AlpacaBytes/alpaca-extras</PackageProjectUrl>
+    <Summary>An assortment of controls for Xamarin Forms. Mostly Skiasharp based.</Summary>
+    <PackageTags>xamarin;xamarin forms;skiasharp</PackageTags>
+    <Title>Alpaca Extras</Title>
+    <Description>An assortment of controls for Xamarin Forms. Mostly Skiasharp based.</Description>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="SkiaSharp.Views.Forms" Version="1.59.2" />
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
+    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.0" />
   </ItemGroup>
 
 </Project>
