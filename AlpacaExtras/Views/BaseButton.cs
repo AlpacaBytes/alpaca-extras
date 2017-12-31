@@ -7,8 +7,8 @@ namespace AlpacaExtras.Views
 {
     public abstract class BaseButton : SKCanvasView
     {
-        public static BindableProperty TitleProperty =
-            BindableProperty.Create(nameof(Title), typeof(string), typeof(Button));
+        public static BindableProperty TextProperty =
+            BindableProperty.Create(nameof(Text), typeof(string), typeof(Button));
         public static readonly BindableProperty FontProperty =
             BindableProperty.Create("Font", typeof(Font), typeof(Button), default(Font),
                                     propertyChanged: Redraw);
@@ -27,7 +27,7 @@ namespace AlpacaExtras.Views
         public static BindableProperty PaddingProperty =
             BindableProperty.Create(nameof(Padding), typeof(Thickness), typeof(Button), new Thickness(5,2));
 
-        public string Title { get => (string)GetValue(TitleProperty); set => SetValue(TitleProperty, value); }
+        public string Text { get => (string)GetValue(TextProperty); set => SetValue(TextProperty, value); }
         public string FontFamily { get => (string)GetValue(FontFamilyProperty); set => SetValue(FontFamilyProperty, value); }
         public double FontSize { get => (double)GetValue(FontSizeProperty); set => SetValue(FontSizeProperty, value); }
         public Thickness Padding { get => (Thickness)GetValue(PaddingProperty); set => SetValue(PaddingProperty, value); }
@@ -73,7 +73,7 @@ namespace AlpacaExtras.Views
             }
 
             SKRect textBounds = new SKRect();
-            var textWidth = paint.MeasureText(Title, ref textBounds);
+            var textWidth = paint.MeasureText(Text, ref textBounds);
 
             var size = new Size(textWidth + Padding.HorizontalThickness, textBounds.Height + Padding.VerticalThickness);
             var request = new SizeRequest(size);
@@ -119,7 +119,7 @@ namespace AlpacaExtras.Views
             }
 
             // Draw the text
-            if (Title != null)
+            if (Text != null)
             {
                 var paint = new SKPaint
                 {
@@ -136,10 +136,10 @@ namespace AlpacaExtras.Views
                 }
 
                 SKRect textBounds = new SKRect();
-                paint.MeasureText(Title, ref textBounds);
+                paint.MeasureText(Text, ref textBounds);
 
 
-                canvas.DrawText(Title, (float)Padding.Left, adjustedHeight / 2 - textBounds.MidY, paint);
+                canvas.DrawText(Text, (float)Padding.Left, adjustedHeight / 2 - textBounds.MidY, paint);
             }
         }
     }
