@@ -21,7 +21,7 @@ namespace AlpacaExtrasDemo.Droid
 
             base.OnCreate(bundle);
 
-            AlpacaExtras.AlpacaExtras.Init(typeof(App).Assembly, Resources.DisplayMetrics.Density);
+            AlpacaExtras.AlpacaExtras.Init(typeof(App).Assembly);
             AlpacaExtras.AlpacaExtras.Assets.Add("Ubuntu", new Lazy<byte[]>(() =>
             {
                 using (var stream = Assets.Open("Ubuntu-Regular.ttf"))

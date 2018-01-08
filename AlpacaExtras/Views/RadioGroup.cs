@@ -9,22 +9,17 @@ namespace AlpacaExtras.Views
     public class RadioGroup : StackLayout
     {
         public static readonly BindableProperty SelectedValueProperty =
-            BindableProperty.Create(nameof(SelectedValue), typeof(object), typeof(ToggleButton), false);
-
-        public static readonly BindableProperty DefaultValueProperty =
-            BindableProperty.Create(nameof(DefaultValue), typeof(object), typeof(ToggleButton), false);
+            BindableProperty.Create(nameof(SelectedValue), typeof(object), typeof(ToggleButton), false, BindingMode.TwoWay);
 
         public object SelectedValue { get => GetValue(SelectedValueProperty); set => SetValue(SelectedValueProperty, value); }
-        public object DefaultValue { get => GetValue(DefaultValueProperty); set => SetValue(DefaultValueProperty, value); }
 
-        protected override void OnAdded(View view)
+        protected override void OnChildAdded(Element child)
         {
-            base.OnAdded(view);
+            base.OnChildAdded(child);
 
-            if (view is RadioButton radio)
+            if (child is RadioButton radio)
             {
-                if (radio.Value == DefaultValue)
-                    radio.IsToggled = true;
+                radio.IsToggled = radio.Value == SelectedValue;
             }
         }
 
@@ -39,8 +34,7 @@ namespace AlpacaExtras.Views
                 {
                     if (view is RadioButton radio)
                     {
-                        if (radio.Value != SelectedValue)
-                            radio.IsToggled = false;
+                        radio.IsToggled = radio.Value == SelectedValue;
                     }
                 }
             }

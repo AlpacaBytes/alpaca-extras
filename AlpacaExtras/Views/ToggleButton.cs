@@ -24,12 +24,9 @@ namespace AlpacaExtras.Views
         public override Color TextColor { get => IsToggled ? OnTextColor : OffTextColor; set { } }
         public override Color FillColor { get => IsToggled ? OnFillColor : OffFillColor; set { } }
 
-
-
-
         public static readonly BindableProperty IsToggledProperty =
             BindableProperty.Create(nameof(IsToggled), typeof(bool), typeof(ToggleButton), false,
-         propertyChanged: Redraw);
+         propertyChanged: Redraw, defaultBindingMode: BindingMode.TwoWay);
 
         public static readonly BindableProperty OnTextColorProperty =
             BindableProperty.Create(nameof(OnTextColor), typeof(Color), typeof(Button), Color.Default,

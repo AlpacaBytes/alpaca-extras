@@ -8,14 +8,12 @@ namespace AlpacaExtras
     public static class AlpacaExtras
     {
         internal static Assembly AssetsAssembly;
-        internal static float Scale = 1;
 
         public static Dictionary<string, Lazy<byte[]>> Assets = new Dictionary<string, Lazy<byte[]>>();
 
-        public static void Init(Assembly assetsAssembly, float scale)
+        public static void Init(Assembly assetsAssembly)
         {
             AssetsAssembly = assetsAssembly;
-            Scale = scale;
         }
 
     }

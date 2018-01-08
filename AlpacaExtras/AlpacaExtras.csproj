@@ -12,14 +12,16 @@
     <PackageTags>xamarin;xamarin forms;skiasharp</PackageTags>
     <Title>Alpaca Extras</Title>
     <Description>An assortment of controls for Xamarin Forms. Mostly Skiasharp based.</Description>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
+    <AssemblyVersion>1.0.2.1</AssemblyVersion>
+    <FileVersion>1.0.2.1</FileVersion>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SkiaSharp.Views.Forms" Version="1.59.2" />
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
     <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="1.59.3" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
   </ItemGroup>
 
 </Project>

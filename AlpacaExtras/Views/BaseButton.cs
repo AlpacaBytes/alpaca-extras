@@ -25,13 +25,18 @@ namespace AlpacaExtras.Views
             BindableProperty.Create(nameof(Padding), typeof(float), typeof(Button), 1f);
 
         public static BindableProperty PaddingProperty =
-            BindableProperty.Create(nameof(Padding), typeof(Thickness), typeof(Button), new Thickness(5,2));
+            BindableProperty.Create(nameof(Padding), typeof(Thickness), typeof(Button), new Thickness(5, 2));
+
+        public static BindableProperty EdgeTypeProperty =
+            BindableProperty.Create(nameof(EdgeType), typeof(EdgeType), typeof(Button), EdgeType.Rounded,
+                propertyChanged: Redraw);
 
         public string Text { get => (string)GetValue(TextProperty); set => SetValue(TextProperty, value); }
         public string FontFamily { get => (string)GetValue(FontFamilyProperty); set => SetValue(FontFamilyProperty, value); }
         public double FontSize { get => (double)GetValue(FontSizeProperty); set => SetValue(FontSizeProperty, value); }
         public Thickness Padding { get => (Thickness)GetValue(PaddingProperty); set => SetValue(PaddingProperty, value); }
         public float BorderThickness { get => (float)GetValue(BorderThicknessProperty); set => SetValue(BorderThicknessProperty, value); }
+        public EdgeType EdgeType { get => (EdgeType)GetValue(EdgeTypeProperty); set => SetValue(EdgeTypeProperty, value); }
 
         public virtual Color BorderColor { get; set; }
         public virtual Color TextColor { get; set; }
@@ -81,41 +86,48 @@ namespace AlpacaExtras.Views
             return request;
         }
 
-        protected override void OnPaintSurface(SKPaintSurfaceEventArgs e)
+        protected void Paint(SKPaintSurfaceEventArgs e, Color fillColor, Color borderColor, Color textColor)
         {
-            var adjustedHeight = (float)Height; // / AlpacaExtras.Scale;
-            var adjustedWidth = (float)Width; /// AlpacaExtras.Scale;
-            var adjustedBorder = BorderThickness / AlpacaExtras.Scale;
+            var scale = e.Info.Width / (float)Width;
+            var adjustedHeight = (float)Height;
+            var adjustedWidth = (float)Width;
+            var adjustedBorder = BorderThickness;
 
             base.OnPaintSurface(e);
             var canvas = e.Surface.Canvas;
             canvas.Clear();
 
-            canvas.Scale(AlpacaExtras.Scale);
+            canvas.Scale(e.Info.Width / (float)Width);
 
             // Draw the background
-            if (FillColor != Color.Default)
+            if (fillColor != Color.Default)
             {
                 var paint = new SKPaint
                 {
                     Style = SKPaintStyle.Fill,
-                    Color = FillColor.ToSKColor(),
+                    Color = fillColor.ToSKColor(),
                     IsAntialias = true
                 };
-                canvas.DrawRoundRect(new SKRect(0, 0, adjustedWidth, adjustedHeight), adjustedHeight / 2, adjustedHeight / 2, paint);
+                if (EdgeType == EdgeType.Rounded)
+                    canvas.DrawRoundRect(new SKRect(0, 0, adjustedWidth, adjustedHeight), adjustedHeight / 2, adjustedHeight / 2, paint);
+                else if (EdgeType == EdgeType.Square)
+                    canvas.DrawRect(new SKRect(0, 0, adjustedWidth, adjustedHeight), paint);
             }
 
             // Draw the border
-            if (BorderColor != Color.Default)
+            if (borderColor != Color.Default)
             {
                 var paint = new SKPaint
                 {
                     Style = SKPaintStyle.Stroke,
-                    Color = BorderColor.ToSKColor(),
+                    Color = borderColor.ToSKColor(),
                     IsAntialias = true,
                     StrokeWidth = adjustedBorder
                 };
-                canvas.DrawRoundRect(new SKRect(adjustedBorder / 2, adjustedBorder / 2, adjustedWidth - adjustedBorder / 2, adjustedHeight - adjustedBorder / 2), adjustedHeight / 2, adjustedHeight / 2, paint);
+                if (EdgeType == EdgeType.Rounded)
+                    canvas.DrawRoundRect(new SKRect(adjustedBorder / 2, adjustedBorder / 2, adjustedWidth - adjustedBorder / 2, adjustedHeight - adjustedBorder / 2), adjustedHeight / 2, adjustedHeight / 2, paint);
+                else if (EdgeType == EdgeType.Square)
+                    canvas.DrawRect(new SKRect(0, 0, adjustedWidth, adjustedHeight), paint);
             }
 
             // Draw the text
@@ -124,7 +136,7 @@ namespace AlpacaExtras.Views
                 var paint = new SKPaint
                 {
                     TextSize = (float)FontSize,
-                    Color = TextColor == Color.Default ? Color.Black.ToSKColor() : TextColor.ToSKColor(),
+                    Color = textColor == Color.Default ? Color.Black.ToSKColor() : textColor.ToSKColor(),
                     IsAntialias = true,
                     TextAlign = SKTextAlign.Left
                 };
@@ -139,8 +151,13 @@ namespace AlpacaExtras.Views
                 paint.MeasureText(Text, ref textBounds);
 
 
-                canvas.DrawText(Text, (float)Padding.Left, adjustedHeight / 2 - textBounds.MidY, paint);
+                canvas.DrawText(Text, adjustedWidth / 2 - textBounds.MidX, adjustedHeight / 2 - textBounds.MidY, paint);
             }
+        }
+
+        protected override void OnPaintSurface(SKPaintSurfaceEventArgs e)
+        {
+            Paint(e, FillColor, BorderColor, TextColor);
         }
     }
 }

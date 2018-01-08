@@ -23,7 +23,7 @@ namespace AlpacaExtrasDemo.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            AlpacaExtras.AlpacaExtras.Init(this.GetType().Assembly, (float)UIScreen.MainScreen.Scale);
+            AlpacaExtras.AlpacaExtras.Init(this.GetType().Assembly);
 
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());

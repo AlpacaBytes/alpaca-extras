@@ -16,14 +16,13 @@ namespace AlpacaExtras.Views
         {
             OnTapped = () =>
             {
-                if (Parent is RadioGroup radioGroup)
+                if (Parent is RadioGroup rg)
                 {
-                    radioGroup.SelectedValue = Value;
+                    rg.SelectedValue = Value;
                 }
-
-                IsToggled = true;
             };
-        }
 
+
+        }
     }
 }
