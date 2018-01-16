@@ -13,16 +13,6 @@ namespace AlpacaExtras.Views
 
         public object SelectedValue { get => GetValue(SelectedValueProperty); set => SetValue(SelectedValueProperty, value); }
 
-        protected override void OnChildAdded(Element child)
-        {
-            base.OnChildAdded(child);
-
-            if (child is RadioButton radio)
-            {
-                radio.IsToggled = radio.Value == SelectedValue;
-            }
-        }
-
         protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             base.OnPropertyChanged(propertyName);
@@ -34,7 +24,7 @@ namespace AlpacaExtras.Views
                 {
                     if (view is RadioButton radio)
                     {
-                        radio.IsToggled = radio.Value == SelectedValue;
+                        radio.IsToggled = radio.Value.ToString() == (SelectedValue ?? string.Empty).ToString();
                     }
                 }
             }

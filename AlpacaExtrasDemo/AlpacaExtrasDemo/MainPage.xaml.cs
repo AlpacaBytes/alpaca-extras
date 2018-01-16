@@ -12,6 +12,8 @@ namespace AlpacaExtrasDemo
 		public MainPage()
 		{
 			InitializeComponent();
+
+            BindingContext = new MainPageModel();
 		}
 	}
 }

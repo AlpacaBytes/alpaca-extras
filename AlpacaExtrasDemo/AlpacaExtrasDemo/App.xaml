@@ -1,10 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:alpacavc="clr-namespace:AlpacaExtras.ValueConverters;assembly=AlpacaExtras"
              x:Class="AlpacaExtrasDemo.App">
 	<Application.Resources>
 
 		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <alpacavc:IntValueConverter x:Key="IntConverter" />
+        </ResourceDictionary>
 
 	</Application.Resources>
 </Application>
