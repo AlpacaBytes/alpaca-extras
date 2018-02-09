@@ -43,6 +43,8 @@
 
         <Label Text="{Binding SelectedSize}" />
 
+        <alpaca:NinePatch Source="alert_background.png" Insets="20,20,30,60" HorizontalOptions="Fill" HeightRequest="100" />
+
 
     </StackLayout>
 
