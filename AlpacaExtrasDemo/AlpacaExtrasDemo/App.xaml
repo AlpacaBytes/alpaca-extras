@@ -8,6 +8,7 @@
 		<!-- Application resource dictionary -->
         <ResourceDictionary>
             <alpacavc:IntValueConverter x:Key="IntConverter" />
+            <alpacavc:DoubleValueConverter x:Key="DoubleConverter" />
         </ResourceDictionary>
 
 	</Application.Resources>
