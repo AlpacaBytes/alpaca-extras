@@ -18,6 +18,8 @@
 
 
         <alpaca:ToggleButton Text="Toggle Button" FillColor="#DBDBDB" TextColor="White" FontSize="12" Padding="7,3" OnFillColor="Blue" OffFillColor="Green" OnTextColor="White" OffTextColor="White"/>
+        <alpaca:ToggleButton OnText="On" OffText="Off" FillColor="#DBDBDB" TextColor="White" FontSize="12" Padding="7,3" OnFillColor="Blue" OffFillColor="Green" OnTextColor="White" OffTextColor="White"/>
+
 
         <alpaca:RadioGroup HorizontalOptions="Fill" Orientation="Horizontal" SelectedValue="{Binding Number, Converter={StaticResource IntConverter}}" >
             <alpaca:RadioButton Text="1" Value="1" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3"/>

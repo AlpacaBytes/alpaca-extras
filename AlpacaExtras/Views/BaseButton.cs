@@ -31,7 +31,7 @@ namespace AlpacaExtras.Views
             BindableProperty.Create(nameof(EdgeType), typeof(EdgeType), typeof(Button), EdgeType.Rounded,
                 propertyChanged: Redraw);
 
-        public string Text { get => (string)GetValue(TextProperty); set => SetValue(TextProperty, value); }
+        public virtual string Text { get => (string)GetValue(TextProperty); set => SetValue(TextProperty, value); }
         public string FontFamily { get => (string)GetValue(FontFamilyProperty); set => SetValue(FontFamilyProperty, value); }
         public double FontSize { get => (double)GetValue(FontSizeProperty); set => SetValue(FontSizeProperty, value); }
         public Thickness Padding { get => (Thickness)GetValue(PaddingProperty); set => SetValue(PaddingProperty, value); }
