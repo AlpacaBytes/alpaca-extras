@@ -21,6 +21,7 @@ namespace AlpacaExtrasDemo.UWP
         {
             this.InitializeComponent();
 
+            AlpacaExtras.AlpacaExtras.Init(typeof(AlpacaExtrasDemo.App).Assembly);
             LoadApplication(new AlpacaExtrasDemo.App());
         }
     }

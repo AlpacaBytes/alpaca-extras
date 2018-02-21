@@ -41,6 +41,8 @@ namespace AlpacaExtrasDemo
             }
         }
 
+        public List<string> RadioItems => new List<string>(new[] { "Tom", "Ted", "Tina" });
+
         void RaisePropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

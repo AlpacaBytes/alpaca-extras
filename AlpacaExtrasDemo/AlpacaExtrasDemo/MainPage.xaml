@@ -43,6 +43,15 @@
             <alpaca:RadioButton Text="Tina" Value="Tina" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3" IsToggled="True" />
         </alpaca:RadioGroup>
 
+        <alpaca:RadioGroup HorizontalOptions="Fill" Orientation="Horizontal" SelectedValue="{Binding TValue}" ItemsSource="{Binding RadioItems}">
+            <alpaca:RadioGroup.RadioTemplate>
+                <DataTemplate>
+                    <alpaca:RadioButton Text="{Binding}" Value="{Binding}" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3" />
+                </DataTemplate>
+            </alpaca:RadioGroup.RadioTemplate>
+        </alpaca:RadioGroup>
+
+
         <Label Text="{Binding SelectedSize}" />
 
         <alpaca:NinePatch Source="alert_background.png" Insets="20,20,30,60" HorizontalOptions="Fill" HeightRequest="100" />
