@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace AlpacaExtrasDemo
 {
@@ -40,6 +43,16 @@ namespace AlpacaExtrasDemo
                 RaisePropertyChanged();
             }
         }
+
+        //public ObservableCollection<string> ListViewData { get; set; } = new ObservableCollection<string>
+        //{
+        //    "POCO",
+        //    "Net Standard",
+        //    "Android",
+        //    "iOS"
+        //};
+
+        //public ICommand ListViewItemClickedCommand => new Command<string>((arg) => ListViewData.Remove(arg));
 
         void RaisePropertyChanged([CallerMemberName] string propertyName = null)
         {

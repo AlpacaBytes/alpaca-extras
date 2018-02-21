@@ -129,11 +129,17 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
+    <ProjectReference Include="..\..\AlpacaExtras\AlpacaExtras.iOS\AlpacaExtras.iOS.csproj">
+      <Project>{464d4358-28d1-4607-a9c3-6f195a084025}</Project>
+      <Name>AlpacaExtras.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
+    </ProjectReference>
     <ProjectReference Include="..\AlpacaExtrasDemo\AlpacaExtrasDemo.csproj">
       <Project>{F423DD56-5DE2-405E-98E2-1B5FE7B6DCB1}</Project>
       <Name>AlpacaExtrasDemo</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\AlpacaExtras\AlpacaExtras.csproj">
+    <ProjectReference Include="..\..\AlpacaExtras\AlpacaExtras\AlpacaExtras.csproj">
       <Project>{BF4D545E-75D2-482B-9361-A1042035CB01}</Project>
       <Name>AlpacaExtras</Name>
     </ProjectReference>

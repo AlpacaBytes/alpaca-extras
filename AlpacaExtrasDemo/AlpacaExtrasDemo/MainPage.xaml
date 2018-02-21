@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:AlpacaExtrasDemo"
              xmlns:alpaca="clr-namespace:AlpacaExtras.Views;assembly=AlpacaExtras"
+             xmlns:effects="clr-namespace:AlpacaExtras.Effects;assembly=AlpacaExtras"
+             x:Name="page"
              x:Class="AlpacaExtrasDemo.MainPage">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -49,5 +51,21 @@
 
 
     </StackLayout>
+
+    <!--<ListView ItemsSource="{Binding ListViewData}">
+        <ListView.Effects>
+            <effects:NoSelectionEffect />
+        </ListView.Effects>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding .}" />
+                        <alpaca:Button Text="CLICK ME!" Command="{Binding Source={x:Reference page}, Path=BindingContext.ListViewItemClickedCommand}" CommandParameter="{Binding .}" TextColor="White" FillColor="#A2A6F4" HorizontalOptions="End" Padding="7,3" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>-->
 
 </ContentPage>

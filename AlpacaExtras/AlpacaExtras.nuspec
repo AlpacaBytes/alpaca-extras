@@ -21,7 +21,11 @@
     </dependencies>
   </metadata>
   	<files>
-		<file src="bin\Release\netstandard2.0\*.dll" target="lib\netstandard2.0" />
-		<file src="bin\Release\netstandard2.0\*.pdb" target="lib\netstandard2.0" />
+		<file src="AlpacaExtras\bin\Release\netstandard2.0\*.dll" target="lib\netstandard2.0" />
+		<file src="AlpacaExtras\bin\Release\netstandard2.0\*.pdb" target="lib\netstandard2.0" />
+		<file src="AlpacaExtras.Droid\bin\Release\*.dll" target="lib\MonoAndroid10" />
+		<file src="AlpacaExtras.Droid\bin\Release\*.pdb" target="lib\MonoAndroid10" />
+		<file src="AlpacaExtras.iOS\bin\Release\*.dll" target="lib\Xamarin.iOS10" />
+		<file src="AlpacaExtras.iOS\bin\Release\*.pdb" target="lib\Xamarin.iOS10" />
 	</files>
 </package>
