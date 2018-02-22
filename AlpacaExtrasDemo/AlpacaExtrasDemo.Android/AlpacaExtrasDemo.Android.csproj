@@ -87,7 +87,11 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\AlpacaExtras\AlpacaExtras.csproj">
+    <ProjectReference Include="..\..\AlpacaExtras\AlpacaExtras.Droid\AlpacaExtras.Droid.csproj">
+      <Project>{6958e3c6-fe03-4b36-a9f8-21e26059210a}</Project>
+      <Name>AlpacaExtras.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\AlpacaExtras\AlpacaExtras\AlpacaExtras.csproj">
       <Project>{BF4D545E-75D2-482B-9361-A1042035CB01}</Project>
       <Name>AlpacaExtras</Name>
     </ProjectReference>

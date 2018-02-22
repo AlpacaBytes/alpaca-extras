@@ -33,6 +33,8 @@ namespace AlpacaExtras.Views
 
         public static readonly BindableProperty CommandProperty =
             BindableProperty.Create(nameof(Command), typeof(Command), typeof(Views.Button));
+        public static readonly BindableProperty CommandParameterProperty =
+            BindableProperty.Create(nameof(CommandParameter), typeof(object), typeof(Views.Button));
 
 
         protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -51,6 +53,7 @@ namespace AlpacaExtras.Views
         public Color DisabledBorderColor { get => (Color)GetValue(DisabledBorderColorProperty); set => SetValue(DisabledBorderColorProperty, value); }
         public Color DisabledFillColor { get => (Color)GetValue(DisabledFillColorProperty); set => SetValue(DisabledFillColorProperty, value); }
         public Command Command { get => (Command)GetValue(CommandProperty); set => SetValue(CommandProperty, value); }
+        public object CommandParameter { get => GetValue(CommandParameterProperty); set => SetValue(CommandParameterProperty, value); }
 
         //public ImageSource LeftIcon { get => (ImageSource)GetValue(LeftIconProperty); set => SetValue(LeftIconProperty, value); }
 
@@ -58,8 +61,8 @@ namespace AlpacaExtras.Views
         {
             OnTapped = () =>
             {
-                if (Command != null && Command.CanExecute(null))
-                    Command.Execute(null);
+                if (Command != null && Command.CanExecute(CommandParameter))
+                    Command.Execute(CommandParameter);
             };
         }
 

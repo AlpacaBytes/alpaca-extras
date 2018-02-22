@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\AlpacaExtras\AlpacaExtras.csproj" />
+    <ProjectReference Include="..\..\AlpacaExtras\AlpacaExtras\AlpacaExtras.csproj" />
   </ItemGroup>
 
   <ItemGroup>
