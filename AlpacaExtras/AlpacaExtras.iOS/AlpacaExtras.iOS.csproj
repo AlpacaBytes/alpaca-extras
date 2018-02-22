@@ -59,12 +59,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AlpacaExtras\AlpacaExtras.csproj">
-      <Project>{bf4d545e-75d2-482b-9361-a1042035cb01}</Project>
-      <Name>AlpacaExtras</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

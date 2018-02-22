@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>AlpacaExtras</id>
-    <version>0.1.10</version>
+    <version>0.1.11</version>
     <title>Alpaca Extras</title>
     <authors>John Harris</authors>
     <owners>John Harris</owners>
@@ -17,15 +17,22 @@
     <dependencies>
       <group targetFramework="netstandard2.0">
         <dependency id="SkiaSharp.Views.Forms" version="1.59.2" />
+		<dependency id="Xamarin.Forms" version="2.5.0" />
       </group>
     </dependencies>
   </metadata>
   	<files>
-		<file src="AlpacaExtras\bin\Release\netstandard2.0\*.dll" target="lib\netstandard2.0" />
-		<file src="AlpacaExtras\bin\Release\netstandard2.0\*.pdb" target="lib\netstandard2.0" />
-		<file src="AlpacaExtras.Droid\bin\Release\*.dll" target="lib\MonoAndroid10" />
-		<file src="AlpacaExtras.Droid\bin\Release\*.pdb" target="lib\MonoAndroid10" />
-		<file src="AlpacaExtras.iOS\bin\Release\*.dll" target="lib\Xamarin.iOS10" />
-		<file src="AlpacaExtras.iOS\bin\Release\*.pdb" target="lib\Xamarin.iOS10" />
+		<file src="AlpacaExtras\bin\Release\netstandard2.0\AlpacaExtras.dll" target="lib\netstandard2.0\AlpacaExtras.dll" />
+		<file src="AlpacaExtras\bin\Release\netstandard2.0\AlpacaExtras.pdb" target="lib\netstandard2.0\AlpacaExtras.pdb" />
+		<!-- Xamarin Android -->
+		<file src="AlpacaExtras\bin\Release\netstandard2.0\AlpacaExtras.dll" target="lib\MonoAndroid10\AlpacaExtras.dll" />
+		<file src="AlpacaExtras\bin\Release\netstandard2.0\AlpacaExtras.pdb" target="lib\MonoAndroid10\AlpacaExtras.pdb" />
+		<file src="AlpacaExtras.Droid\bin\Release\AlpacaExtras.Droid.dll" target="lib\MonoAndroid10\AlpacaExtras.Droid.dll" />
+		<file src="AlpacaExtras.Droid\bin\Release\AlpacaExtras.Droid.pdb" target="lib\MonoAndroid10\AlpacaExtras.Droid.pdb" />
+		<!-- Xamarin iOS -->
+		<file src="AlpacaExtras\bin\Release\netstandard2.0\AlpacaExtras.dll" target="lib\Xamarin.iOS10\AlpacaExtras.dll" />
+		<file src="AlpacaExtras\bin\Release\netstandard2.0\AlpacaExtras.pdb" target="lib\Xamarin.iOS10\AlpacaExtras.pdb" />
+		<file src="AlpacaExtras.iOS\bin\Release\AlpacaExtras.iOS.dll" target="lib\Xamarin.iOS10\AlpacaExtras.iOS.dll" />
+		<file src="AlpacaExtras.iOS\bin\Release\AlpacaExtras.iOS.pdb" target="lib\Xamarin.iOS10\AlpacaExtras.iOS.pdb" />
 	</files>
 </package>

@@ -159,7 +159,7 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\AlpacaExtras\AlpacaExtras.csproj">
+    <ProjectReference Include="..\..\AlpacaExtras\AlpacaExtras\AlpacaExtras.csproj">
       <Project>{bf4d545e-75d2-482b-9361-a1042035cb01}</Project>
       <Name>AlpacaExtras</Name>
     </ProjectReference>
