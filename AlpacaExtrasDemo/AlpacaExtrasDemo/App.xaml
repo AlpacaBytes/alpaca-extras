@@ -4,12 +4,13 @@
              xmlns:alpacavc="clr-namespace:AlpacaExtras.ValueConverters;assembly=AlpacaExtras"
              x:Class="AlpacaExtrasDemo.App">
 	<Application.Resources>
-
 		<!-- Application resource dictionary -->
         <ResourceDictionary>
             <alpacavc:IntValueConverter x:Key="IntConverter" />
             <alpacavc:DoubleValueConverter x:Key="DoubleConverter" />
+            <OnPlatform x:Key="RegularFont" x:TypeArguments="x:String">
+                <On Platform="Android">Ubuntu-Regular.ttf#Ubuntu-Regular</On>
+            </OnPlatform>
         </ResourceDictionary>
-
 	</Application.Resources>
 </Application>

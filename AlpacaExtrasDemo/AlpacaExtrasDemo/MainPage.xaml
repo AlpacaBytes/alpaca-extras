@@ -53,6 +53,12 @@
             </alpaca:RadioGroup.RadioTemplate>
         </alpaca:RadioGroup>
 
+        <Entry Placeholder="Entry with no border and with different font" PlaceholderColor="Blue">
+            <Entry.Effects>
+                <effects:EntryNoBorderEffect />
+                <effects:EntryPlaceholderTextEffect FontSize="16" FontFamily="{StaticResource RegularFont}"  />
+            </Entry.Effects>
+        </Entry>
 
         <Label Text="{Binding SelectedSize}" />
 
