@@ -7,7 +7,7 @@ using Java.Lang;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportEffect(typeof(AndroidListViewNoSelectionEffect), "NoSelectionEffect")]
+[assembly: ExportEffect(typeof(AndroidListViewNoSelectionEffect), "ListViewNoSelectionEffect")]
 namespace AlpacaExtras.Droid.Effects
 {
     public class AndroidListViewNoSelectionEffect : PlatformEffect
