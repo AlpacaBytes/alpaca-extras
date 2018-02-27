@@ -9,6 +9,7 @@
             <alpacavc:IntValueConverter x:Key="IntConverter" />
             <alpacavc:DoubleValueConverter x:Key="DoubleConverter" />
             <OnPlatform x:Key="RegularFont" x:TypeArguments="x:String">
+                <On Platform="iOS">Ubuntu-Regular</On>
                 <On Platform="Android">Ubuntu-Regular.ttf#Ubuntu-Regular</On>
             </OnPlatform>
         </ResourceDictionary>

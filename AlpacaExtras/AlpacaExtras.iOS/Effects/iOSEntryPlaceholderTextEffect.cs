@@ -26,9 +26,13 @@ namespace AlpacaExtras.iOS.Effects
 
                 void SetPlaceholderText()
                 {
-                    control.AttributedPlaceholder = new NSAttributedString(element.Placeholder,
-                                UIFont.FromName(effect.FontFamily, effect.FontSize),
-                                element.PlaceholderColor.ToUIColor());
+                    if (!string.IsNullOrEmpty(element.Placeholder) && 
+                        !string.IsNullOrEmpty(effect?.FontFamily))
+                    {
+                        control.AttributedPlaceholder = new NSAttributedString(element.Placeholder,
+                                    UIFont.FromName(effect.FontFamily, effect.FontSize),
+                                    element.PlaceholderColor.ToUIColor());
+                    }
                 }
             }
         }
