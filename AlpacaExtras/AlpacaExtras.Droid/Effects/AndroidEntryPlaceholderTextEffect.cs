@@ -42,11 +42,11 @@ namespace AlpacaExtras.Droid.Effects
                     }
                     else if(fontFamily.Contains("#"))
                     {
-                        control.Typeface = Typeface.CreateFromAsset(Android.App.Application.Context.Assets, effect.FontFamily.Split('#').FirstOrDefault());
+                        control.Typeface = Typeface.CreateFromAsset(Android.App.Application.Context.Assets, fontFamily.Split('#').FirstOrDefault());
                     }
                     else
                     {
-                        control.Typeface = Typeface.CreateFromAsset(Android.App.Application.Context.Assets, effect.FontFamily);
+                        control.Typeface = Typeface.CreateFromAsset(Android.App.Application.Context.Assets, fontFamily);
                     }
                     control.TextSize = fontSize;
                 }
