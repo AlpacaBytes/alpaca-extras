@@ -10,7 +10,11 @@
             <alpacavc:DoubleValueConverter x:Key="DoubleConverter" />
             <OnPlatform x:Key="RegularFont" x:TypeArguments="x:String">
                 <On Platform="iOS">Ubuntu-Regular</On>
-                <On Platform="Android">Ubuntu-Regular.ttf#Ubuntu-Regular</On>
+                <On Platform="Android">Fonts/Ubuntu-Regular.ttf#Ubuntu-Regular</On>
+            </OnPlatform>
+            <OnPlatform x:Key="LightItalicFont" x:TypeArguments="x:String">
+                <On Platform="iOS">Ubuntu-LightItalic</On>
+                <On Platform="Android">Fonts/Ubuntu-LightItalic.ttf#Ubuntu-LightItalic</On>
             </OnPlatform>
         </ResourceDictionary>
 	</Application.Resources>

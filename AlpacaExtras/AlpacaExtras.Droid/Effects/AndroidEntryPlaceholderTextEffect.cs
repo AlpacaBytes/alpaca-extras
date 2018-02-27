@@ -24,7 +24,7 @@ namespace AlpacaExtras.Droid.Effects
                 
                 control.BeforeTextChanged += (s, e) =>
                 {
-                    if (e.BeforeCount == 0 && e.AfterCount > 0)
+                    if (e.Start == 0 && e.AfterCount > 0)
                         SetFont(element.FontFamily, (float)element.FontSize);
                 };
 
