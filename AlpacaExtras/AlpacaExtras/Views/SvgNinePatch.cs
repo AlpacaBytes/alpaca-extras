@@ -83,7 +83,6 @@ namespace AlpacaExtras.Views
                 IsAntialias = true
             };
 
-
             canvas.Clear();
             canvas.DrawBitmapNinePatch(bmp, new SKRectI((int)Insets.Left, (int)Insets.Top, bmp.Width - (int)Insets.Right, bmp.Height - (int)Insets.Bottom), new SKRect(0, 0, (float)Width, (float)Height), paint);
         }
