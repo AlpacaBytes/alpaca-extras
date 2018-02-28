@@ -6,17 +6,20 @@
 
   <ItemGroup>
     <None Remove="Assets\alert_background.png" />
+    <None Remove="Assets\Border.svg" />
     <None Remove="Ubuntu-Regular.ttf" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Assets\alert_background.png" />
+    <EmbeddedResource Include="Assets\Border.svg" />
     <EmbeddedResource Include="Assets\Ubuntu-Regular.ttf" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="PropertyChanged.Fody" Version="2.2.4" />
-    <PackageReference Include="SkiaSharp.Views.Forms" Version="1.59.3" />
+    <PackageReference Include="SkiaSharp.Svg" Version="1.59.1" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="1.60.0" />
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
   </ItemGroup>
 

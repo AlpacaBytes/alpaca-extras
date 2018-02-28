@@ -152,14 +152,17 @@
     <PackageReference Include="PropertyChanged.Fody">
       <Version>2.2.4</Version>
     </PackageReference>
+    <PackageReference Include="SkiaSharp.Svg">
+      <Version>1.59.1</Version>
+    </PackageReference>
     <PackageReference Include="SkiaSharp.Views.Forms">
-      <Version>1.59.3</Version>
+      <Version>1.60.0</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\AlpacaExtras\AlpacaExtras.csproj">
+    <ProjectReference Include="..\..\AlpacaExtras\AlpacaExtras\AlpacaExtras.csproj">
       <Project>{bf4d545e-75d2-482b-9361-a1042035cb01}</Project>
       <Name>AlpacaExtras</Name>
     </ProjectReference>
