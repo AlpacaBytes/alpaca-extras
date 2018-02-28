@@ -44,15 +44,15 @@ namespace AlpacaExtrasDemo
             }
         }
 
-        //public ObservableCollection<string> ListViewData { get; set; } = new ObservableCollection<string>
-        //{
-        //    "POCO",
-        //    "Net Standard",
-        //    "Android",
-        //    "iOS"
-        //};
+        public ObservableCollection<string> ListViewData { get; set; } = new ObservableCollection<string>
+        {
+            "POCO",
+            "Net Standard",
+            "Android",
+            "iOS"
+        };
 
-        //public ICommand ListViewItemClickedCommand => new Command<string>((arg) => ListViewData.Remove(arg));
+        public ICommand ListViewItemClickedCommand => new Command<string>((arg) => ListViewData.Remove(arg));
 
         public List<string> RadioItems => new List<string>(new[] { "Tom", "Ted", "Tina" });
 

@@ -22,6 +22,7 @@ namespace AlpacaExtrasDemo.Droid
             base.OnCreate(bundle);
 
             AlpacaExtras.AlpacaExtras.Init(typeof(App).Assembly, "Assets");
+            AlpacaExtras.Droid.AlpacaExtras.Init();
 
             AlpacaExtras.AlpacaExtras.Assets.Add("Ubuntu", new Lazy<byte[]>(() =>
             {

@@ -54,6 +54,12 @@
             </alpaca:RadioGroup.RadioTemplate>
         </alpaca:RadioGroup>
 
+        <Entry Placeholder="Entry with no border and with different font" FontFamily="{StaticResource RegularFont}" PlaceholderColor="Blue">
+            <Entry.Effects>
+                <effects:EntryNoBorderEffect />
+                <effects:EntryPlaceholderTextEffect FontSize="16" FontFamily="{StaticResource LightItalicFont}"  />
+            </Entry.Effects>
+        </Entry>
 
 
         <alpaca:NinePatch Source="alert_background.png" Insets="20,20,30,60" HorizontalOptions="Fill" HeightRequest="100" />

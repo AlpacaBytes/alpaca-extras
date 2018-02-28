@@ -50,5 +50,10 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>AlpacaExtrasDemo</string>
+  <key>UIAppFonts</key>
+  <array>
+    <string>Ubuntu-Regular.ttf</string>
+    <string>Ubuntu-LightItalic.ttf</string>
+  </array>
 </dict>
 </plist>

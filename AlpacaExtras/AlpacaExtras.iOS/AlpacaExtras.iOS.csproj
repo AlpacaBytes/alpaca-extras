@@ -59,7 +59,10 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlpacaExtras.cs" />
+    <Compile Include="Effects\iOSEntryPlaceholderTextEffect.cs" />
     <Compile Include="Effects\iOSListViewNoSelectionEffect.cs" />
+    <Compile Include="Effects\iOSEntryNoBorderEffect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

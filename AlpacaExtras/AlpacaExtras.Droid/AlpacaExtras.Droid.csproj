@@ -114,7 +114,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlpacaExtras.cs" />
+    <Compile Include="Effects\AndroidEntryNoBorderEffect.cs" />
+    <Compile Include="Effects\AndroidEntryPlaceholderTextEffect.cs" />
     <Compile Include="Effects\AndroidListViewNoSelectionEffect.cs" />
+    <Compile Include="Helpers\UnitExtenstions.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
