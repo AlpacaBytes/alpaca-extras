@@ -23,7 +23,8 @@ namespace AlpacaExtrasDemo.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            AlpacaExtras.AlpacaExtras.Init(this.GetType().Assembly);
+            AlpacaExtras.AlpacaExtras.Init(typeof(AlpacaExtrasDemo.App).Assembly, "Assets");
+
             AlpacaExtras.iOS.AlpacaExtras.Init();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());

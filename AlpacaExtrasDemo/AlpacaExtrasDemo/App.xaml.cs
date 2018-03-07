@@ -13,7 +13,7 @@ namespace AlpacaExtrasDemo
 		{
 			InitializeComponent();
 
-			MainPage = new AlpacaExtrasDemo.MainPage();
+			MainPage = new NavigationPage(new AlpacaExtrasDemo.MainPage());
 		}
 
 		protected override void OnStart ()

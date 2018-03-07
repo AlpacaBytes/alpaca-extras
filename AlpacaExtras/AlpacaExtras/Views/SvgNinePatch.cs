@@ -2,6 +2,7 @@
 using SkiaSharp.Views.Forms;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using Xamarin.Forms;
@@ -41,6 +42,7 @@ namespace AlpacaExtras.Views
 
                 if (!AlpacaExtras.AssetsAssembly.GetManifestResourceNames().Contains(path))
                 {
+                    Debug.WriteLine("Alpaca Extras Asset not Found: " + path);
                     view.bmp = null;
                     return;
                 }
@@ -73,17 +75,18 @@ namespace AlpacaExtras.Views
         {
             base.OnPaintSurface(e);
 
+            var canvas = e.Surface.Canvas;
+            canvas.Clear();
+
             if (bmp == null)
                 return;
 
-            var canvas = e.Surface.Canvas;
             canvas.Scale(e.Info.Width / (float)Width);
             var paint = new SKPaint
             {
                 IsAntialias = true
             };
 
-            canvas.Clear();
             canvas.DrawBitmapNinePatch(bmp, new SKRectI((int)Insets.Left, (int)Insets.Top, bmp.Width - (int)Insets.Right, bmp.Height - (int)Insets.Bottom), new SKRect(0, 0, (float)Width, (float)Height), paint);
         }
 
