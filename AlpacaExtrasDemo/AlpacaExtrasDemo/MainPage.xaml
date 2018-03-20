@@ -54,6 +54,14 @@
             </alpaca:RadioGroup.RadioTemplate>
         </alpaca:RadioGroup>
 
+        <alpaca:SelectionGroup ItemsSource="{Binding Selections}" SelectedValues="{Binding SelectedValues}" HorizontalOptions="Start" Orientation="Horizontal">
+            <alpaca:SelectionGroup.SelectionTemplate>
+                <DataTemplate>
+                    <alpaca:SelectButton Text="{Binding}" Value="{Binding}" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3" />
+                </DataTemplate>
+            </alpaca:SelectionGroup.SelectionTemplate>
+        </alpaca:SelectionGroup>
+
         <Entry Placeholder="Entry with no border and with different font" FontFamily="{StaticResource RegularFont}" PlaceholderColor="Blue">
             <Entry.Effects>
                 <effects:EntryNoBorderEffect />
