@@ -96,11 +96,11 @@
       <Name>AlpacaExtras.Droid</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\AlpacaExtras\AlpacaExtras\AlpacaExtras.csproj">
-      <Project>{BF4D545E-75D2-482B-9361-A1042035CB01}</Project>
+      <Project>{bf4d545e-75d2-482b-9361-a1042035cb01}</Project>
       <Name>AlpacaExtras</Name>
     </ProjectReference>
     <ProjectReference Include="..\AlpacaExtrasDemo\AlpacaExtrasDemo.csproj">
-      <Project>{D708E601-0EFB-479B-9B04-54A9C8129347}</Project>
+      <Project>{f423dd56-5de2-405e-98e2-1b5fe7b6dcb1}</Project>
       <Name>AlpacaExtrasDemo</Name>
     </ProjectReference>
   </ItemGroup>

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -55,6 +55,9 @@ namespace AlpacaExtrasDemo
         public ICommand ListViewItemClickedCommand => new Command<string>((arg) => ListViewData.Remove(arg));
 
         public List<string> RadioItems => new List<string>(new[] { "Tom", "Ted", "Tina" });
+
+        public List<DayOfWeek> Selections => Enum.GetValues(typeof(DayOfWeek)).Cast<DayOfWeek>().ToList();
+        public List<DayOfWeek> SelectedValues { get; set; } = new List<DayOfWeek>();
 
         void RaisePropertyChanged([CallerMemberName] string propertyName = null)
         {
