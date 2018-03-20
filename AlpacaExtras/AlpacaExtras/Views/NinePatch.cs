@@ -14,14 +14,17 @@ namespace AlpacaExtras.Views
         public static readonly BindableProperty SourceProperty =
             BindableProperty.Create("Source", typeof(string), typeof(NinePatch), propertyChanged: OnSourceChanged);
 
-
         public static readonly BindableProperty InsetsProperty =
             BindableProperty.Create("Insets", typeof(Thickness), typeof(NinePatch), new Thickness(), propertyChanged: OnInsetsChanged);
+
+        public static readonly BindableProperty AssetScaleProperty =
+            BindableProperty.Create("AssetScale", typeof(double), typeof(NinePatch), 1.0, propertyChanged: OnInsetsChanged);
 
         SKBitmap bmp;
 
         public string Source { get => (string)GetValue(SourceProperty); set => SetValue(SourceProperty, value); }
         public Thickness Insets { get => (Thickness)GetValue(InsetsProperty); set => SetValue(InsetsProperty, value); }
+        public double AssetScale { get => (double)GetValue(AssetScaleProperty); set => SetValue(AssetScaleProperty, value); }
 
         private static void OnSourceChanged(BindableObject bindable, object oldValue, object newValue)
         {
@@ -69,21 +72,47 @@ namespace AlpacaExtras.Views
         {
             base.OnPaintSurface(e);
 
+            if (bmp == null)
+                return;
+
             var canvas = e.Surface.Canvas;
             canvas.Clear();
 
             if (bmp == null)
                 return;
 
-            canvas.Scale(e.Info.Width / (float)Width);
+            var scale = e.Info.Width / (float)Width;
+
+            //canvas.Scale(scale);
             var paint = new SKPaint
             {
                 IsAntialias = true
             };
 
-            canvas.DrawBitmapNinePatch(bmp, new SKRectI((int)Insets.Left, (int)Insets.Top, bmp.Width - (int)Insets.Right, bmp.Height - (int)Insets.Bottom), new SKRect(0, 0, (float)Width, (float)Height), paint);
+            SKBitmap resizedBitmap = null;
+
+            if (scale == AssetScale)
+                resizedBitmap = bmp;
+            else
+            {
+                resizedBitmap = bmp.Resize(new SKImageInfo
+                {
+                    Height = ((int)(bmp.Height * (scale / AssetScale))),
+                    Width = ((int)(bmp.Width * (scale / AssetScale))),
+                    AlphaType = bmp.AlphaType,
+                    ColorSpace = bmp.ColorSpace,
+                    ColorType = bmp.ColorType
+                }, SKBitmapResizeMethod.Triangle);
+            }
+
+            int left = (int)(Insets.Left * (scale / AssetScale));
+            int top = (int)(Insets.Top * (scale / AssetScale));
+            int right = resizedBitmap.Width - (int)((Insets.Right) * (scale / AssetScale));
+            int bottom = resizedBitmap.Height - (int)(((int)Insets.Bottom) * (scale / AssetScale));
+
+            canvas.DrawBitmapNinePatch(resizedBitmap, new SKRectI(left, top, right, bottom), new SKRect(0, 0, (float)Width * scale, (float)Height * scale), paint);
         }
 
-        
+
     }
 }

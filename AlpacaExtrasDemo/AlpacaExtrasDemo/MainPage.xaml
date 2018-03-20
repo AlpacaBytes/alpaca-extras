@@ -11,78 +11,65 @@
             <local:SizeValueConverter x:Key="SizeConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
-    <StackLayout>
-        <alpaca:Button Text="I iz a button!" FillColor="Orange" TextColor="Green" BorderColor="Red" FontSize="32" BorderThickness="1" Padding="10" HorizontalOptions="Start"/>
+    <ScrollView>
+        <StackLayout>
+            <alpaca:Button Text="I iz a button!" FillColor="Orange" TextColor="Green" BorderColor="Red" FontSize="32" BorderThickness="1" Padding="10" HorizontalOptions="Start"/>
 
-        <alpaca:Button Text="Disabled Button" IsEnabled="False" DisabledFillColor="Gray" DisabledTextColor="White" TextColor="White" FontSize="12" Padding="7,3" FillColor="Blue" />
+            <alpaca:Button Text="Disabled Button" IsEnabled="False" DisabledFillColor="Gray" DisabledTextColor="White" TextColor="White" FontSize="12" Padding="7,3" FillColor="Blue" />
 
-        <alpaca:Button Text="Square Edges" TextColor="White" FillColor="#A2A6F4" HorizontalOptions="Center" Padding="7,3" EdgeType="Square" />
-
-
-        <alpaca:ToggleButton Text="Toggle Button" FillColor="#DBDBDB" TextColor="White" FontSize="12" Padding="7,3" OnFillColor="Blue" OffFillColor="Green" OnTextColor="White" OffTextColor="White"/>
-        <alpaca:ToggleButton OnText="On" OffText="Off" FillColor="#DBDBDB" TextColor="White" FontSize="12" Padding="7,3" OnFillColor="Blue" OffFillColor="Green" OnTextColor="White" OffTextColor="White"/>
+            <alpaca:Button Text="Square Edges" TextColor="White" FillColor="#A2A6F4" HorizontalOptions="Center" Padding="7,3" EdgeType="Square" />
 
 
-        <alpaca:RadioGroup HorizontalOptions="Fill" Orientation="Horizontal" SelectedValue="{Binding Number, Converter={StaticResource IntConverter}}" >
-            <alpaca:RadioButton Text="1" Value="1" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3"/>
-            <alpaca:RadioButton Text="2" Value="2" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3"/>
-            <alpaca:RadioButton Text="3" Value="3" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3" IsToggled="True"/>
-            <alpaca:RadioButton Text="4" Value="4" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3"/>
-            <alpaca:RadioButton Text="5" Value="5" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3"/>
-        </alpaca:RadioGroup>
-
-        <Label Text="{Binding Number}" />
-
-        <alpaca:RadioGroup HorizontalOptions="Fill" Orientation="Horizontal" SelectedValue="{Binding SelectedSize,Converter={StaticResource SizeConverter}}" >
-            <alpaca:RadioButton Text="Small" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3" Value="Small" />
-            <alpaca:RadioButton Text="Medium" Value="Medium" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3" />
-            <alpaca:RadioButton Text="Large" Value="Large" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3" IsToggled="True" />
-        </alpaca:RadioGroup>
-        <Label Text="{Binding SelectedSize}" />
-
-        <alpaca:RadioGroup HorizontalOptions="Fill" Orientation="Horizontal" SelectedValue="{Binding TValue}" >
-            <alpaca:RadioButton Text="Tom" Value="Tom" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3" />
-            <alpaca:RadioButton Text="Ted" Value="Ted" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3" />
-            <alpaca:RadioButton Text="Tina" Value="Tina" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3" IsToggled="True" />
-        </alpaca:RadioGroup>
-
-        <alpaca:RadioGroup HorizontalOptions="Fill" Orientation="Horizontal" SelectedValue="{Binding TValue}" ItemsSource="{Binding RadioItems}">
-            <alpaca:RadioGroup.RadioTemplate>
-                <DataTemplate>
-                    <alpaca:RadioButton Text="{Binding}" Value="{Binding}" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3" />
-                </DataTemplate>
-            </alpaca:RadioGroup.RadioTemplate>
-        </alpaca:RadioGroup>
-
-        <Entry Placeholder="Entry with no border and with different font" FontFamily="{StaticResource RegularFont}" PlaceholderColor="Blue">
-            <Entry.Effects>
-                <effects:EntryNoBorderEffect />
-                <effects:EntryPlaceholderTextEffect FontSize="16" FontFamily="{StaticResource LightItalicFont}"  />
-            </Entry.Effects>
-        </Entry>
+            <alpaca:ToggleButton Text="Toggle Button" FillColor="#DBDBDB" TextColor="White" FontSize="12" Padding="7,3" OnFillColor="Blue" OffFillColor="Green" OnTextColor="White" OffTextColor="White"/>
+            <alpaca:ToggleButton OnText="On" OffText="Off" FillColor="#DBDBDB" TextColor="White" FontSize="12" Padding="7,3" OnFillColor="Blue" OffFillColor="Green" OnTextColor="White" OffTextColor="White"/>
 
 
-        <alpaca:NinePatch Source="alert_background.png" Insets="20,20,30,60" HorizontalOptions="Fill" HeightRequest="100" />
+            <alpaca:RadioGroup HorizontalOptions="Fill" Orientation="Horizontal" SelectedValue="{Binding Number, Converter={StaticResource IntConverter}}" >
+                <alpaca:RadioButton Text="1" Value="1" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3"/>
+                <alpaca:RadioButton Text="2" Value="2" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3"/>
+                <alpaca:RadioButton Text="3" Value="3" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3" IsToggled="True"/>
+                <alpaca:RadioButton Text="4" Value="4" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3"/>
+                <alpaca:RadioButton Text="5" Value="5" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3"/>
+            </alpaca:RadioGroup>
 
-        <alpaca:SvgNinePatch Source="Border.svg" Insets="10" HorizontalOptions="Fill" HeightRequest="100" />
+            <Label Text="{Binding Number}" />
+
+            <alpaca:RadioGroup HorizontalOptions="Fill" Orientation="Horizontal" SelectedValue="{Binding SelectedSize,Converter={StaticResource SizeConverter}}" >
+                <alpaca:RadioButton Text="Small" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3" Value="Small" />
+                <alpaca:RadioButton Text="Medium" Value="Medium" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3" />
+                <alpaca:RadioButton Text="Large" Value="Large" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3" IsToggled="True" />
+            </alpaca:RadioGroup>
+            <Label Text="{Binding SelectedSize}" />
+
+            <alpaca:RadioGroup HorizontalOptions="Fill" Orientation="Horizontal" SelectedValue="{Binding TValue}" >
+                <alpaca:RadioButton Text="Tom" Value="Tom" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3" />
+                <alpaca:RadioButton Text="Ted" Value="Ted" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3" />
+                <alpaca:RadioButton Text="Tina" Value="Tina" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3" IsToggled="True" />
+            </alpaca:RadioGroup>
+
+            <alpaca:RadioGroup HorizontalOptions="Fill" Orientation="Horizontal" SelectedValue="{Binding TValue}" ItemsSource="{Binding RadioItems}">
+                <alpaca:RadioGroup.RadioTemplate>
+                    <DataTemplate>
+                        <alpaca:RadioButton Text="{Binding}" Value="{Binding}" OnFillColor="Aqua" OffFillColor="Aquamarine" Padding="7,3" />
+                    </DataTemplate>
+                </alpaca:RadioGroup.RadioTemplate>
+            </alpaca:RadioGroup>
+
+            <Entry Placeholder="Entry with no border and with different font" FontFamily="{StaticResource RegularFont}" PlaceholderColor="Blue">
+                <Entry.Effects>
+                    <effects:EntryNoBorderEffect />
+                    <effects:EntryPlaceholderTextEffect FontSize="16" FontFamily="{StaticResource LightItalicFont}"  />
+                </Entry.Effects>
+            </Entry>
 
 
-    </StackLayout>
+            <alpaca:NinePatch Source="alert_background.png" Insets="20,20,30,60" HorizontalOptions="Fill" HeightRequest="100" />
 
-    <!--<ListView ItemsSource="{Binding ListViewData}">
-        <ListView.Effects>
-            <effects:NoSelectionEffect />
-        </ListView.Effects>
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="{Binding .}" />
-                        <alpaca:Button Text="CLICK ME!" Command="{Binding Source={x:Reference page}, Path=BindingContext.ListViewItemClickedCommand}" CommandParameter="{Binding .}" TextColor="White" FillColor="#A2A6F4" HorizontalOptions="End" Padding="7,3" />
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>-->
+            <alpaca:NinePatch Source="LoginBackground@3x.png" AssetScale="3"  Insets="60" HorizontalOptions="Fill" HeightRequest="100" />
 
+            <alpaca:SvgNinePatch Source="Border.svg" Insets="10" HorizontalOptions="Fill" HeightRequest="100" />
+
+
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

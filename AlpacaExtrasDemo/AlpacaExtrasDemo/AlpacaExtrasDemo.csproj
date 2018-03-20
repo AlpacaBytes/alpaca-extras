@@ -7,12 +7,14 @@
   <ItemGroup>
     <None Remove="Assets\alert_background.png" />
     <None Remove="Assets\Border.svg" />
+    <None Remove="Assets\LoginBackground%403x.png" />
     <None Remove="Ubuntu-Regular.ttf" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Assets\alert_background.png" />
     <EmbeddedResource Include="Assets\Border.svg" />
+    <EmbeddedResource Include="Assets\LoginBackground@3x.png" />
     <EmbeddedResource Include="Assets\Ubuntu-Regular.ttf" />
   </ItemGroup>
 
