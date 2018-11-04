@@ -3,6 +3,7 @@ using AlpacaExtras.Droid.Effects;
 using AlpacaExtras.Droid.Helpers;
 using AlpacaExtras.Effects;
 using Android.Graphics;
+using Android.Runtime;
 using Android.Util;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using Xamarin.Forms.Platform.Android;
 [assembly: ExportEffect(typeof(AndroidEntryPlaceholderTextEffect), "EntryPlaceholderTextEffect")]
 namespace AlpacaExtras.Droid.Effects
 {
+    [Preserve(AllMembers = true)]
     public class AndroidEntryPlaceholderTextEffect : PlatformEffect
     {
         protected override void OnAttached()

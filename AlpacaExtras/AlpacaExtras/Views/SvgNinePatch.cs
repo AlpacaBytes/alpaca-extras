@@ -6,11 +6,13 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
 namespace AlpacaExtras.Views
 {
     public class SvgNinePatch : SKCanvasView
     {
+        [Preserve(AllMembers = true)]
         public static readonly BindableProperty SourceProperty =
             BindableProperty.Create("Source", typeof(string), typeof(SvgNinePatch), propertyChanged: OnSourceChanged);
 

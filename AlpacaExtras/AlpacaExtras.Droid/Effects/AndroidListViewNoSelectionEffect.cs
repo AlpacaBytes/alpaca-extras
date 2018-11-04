@@ -2,6 +2,7 @@
 using AlpacaExtras.Droid.Effects;
 using Android.Content.Res;
 using Android.Graphics.Drawables;
+using Android.Runtime;
 using Android.Views;
 using Java.Lang;
 using Xamarin.Forms;
@@ -10,6 +11,7 @@ using Xamarin.Forms.Platform.Android;
 [assembly: ExportEffect(typeof(AndroidListViewNoSelectionEffect), "ListViewNoSelectionEffect")]
 namespace AlpacaExtras.Droid.Effects
 {
+    [Preserve(AllMembers = true)]
     public class AndroidListViewNoSelectionEffect : PlatformEffect
     {
         protected override void OnAttached()

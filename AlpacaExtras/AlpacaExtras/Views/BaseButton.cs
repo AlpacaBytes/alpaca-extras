@@ -2,9 +2,11 @@
 using SkiaSharp.Views.Forms;
 using System;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
 namespace AlpacaExtras.Views
 {
+    [Preserve(AllMembers = true)]
     public abstract class BaseButton : SKCanvasView
     {
         public static BindableProperty TextProperty =

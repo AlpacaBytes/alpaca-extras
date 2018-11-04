@@ -6,9 +6,11 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
 namespace AlpacaExtras.Views
 {
+    [Preserve(AllMembers = true)]
     public class NinePatch : SKCanvasView
     {
         public static readonly BindableProperty SourceProperty =
@@ -72,7 +74,7 @@ namespace AlpacaExtras.Views
         {
             base.OnPaintSurface(e);
 
-            if (bmp == null)
+            if (Width < 0 || bmp == null)
                 return;
 
             var canvas = e.Surface.Canvas;
@@ -89,28 +91,31 @@ namespace AlpacaExtras.Views
                 IsAntialias = true
             };
 
-            SKBitmap resizedBitmap = null;
-
-            if (scale == AssetScale)
-                resizedBitmap = bmp;
-            else
+            if (scale > 0)
             {
-                resizedBitmap = bmp.Resize(new SKImageInfo
+                SKBitmap resizedBitmap = null;
+
+                if (scale == AssetScale)
+                    resizedBitmap = bmp;
+                else
                 {
-                    Height = ((int)(bmp.Height * (scale / AssetScale))),
-                    Width = ((int)(bmp.Width * (scale / AssetScale))),
-                    AlphaType = bmp.AlphaType,
-                    ColorSpace = bmp.ColorSpace,
-                    ColorType = bmp.ColorType
-                }, SKBitmapResizeMethod.Triangle);
+                    resizedBitmap = bmp.Resize(new SKImageInfo
+                    {
+                        Height = ((int)(bmp.Height * (scale / AssetScale))),
+                        Width = ((int)(bmp.Width * (scale / AssetScale))),
+                        AlphaType = bmp.AlphaType,
+                        ColorSpace = bmp.ColorSpace,
+                        ColorType = bmp.ColorType
+                    }, SKBitmapResizeMethod.Triangle);
+                }
+
+                int left = (int)(Insets.Left * (scale / AssetScale));
+                int top = (int)(Insets.Top * (scale / AssetScale));
+                int right = resizedBitmap.Width - (int)((Insets.Right) * (scale / AssetScale));
+                int bottom = resizedBitmap.Height - (int)(((int)Insets.Bottom) * (scale / AssetScale));
+
+                canvas.DrawBitmapNinePatch(resizedBitmap, new SKRectI(left, top, right, bottom), new SKRect(0, 0, (float)Width * scale, (float)Height * scale), paint);
             }
-
-            int left = (int)(Insets.Left * (scale / AssetScale));
-            int top = (int)(Insets.Top * (scale / AssetScale));
-            int right = resizedBitmap.Width - (int)((Insets.Right) * (scale / AssetScale));
-            int bottom = resizedBitmap.Height - (int)(((int)Insets.Bottom) * (scale / AssetScale));
-
-            canvas.DrawBitmapNinePatch(resizedBitmap, new SKRectI(left, top, right, bottom), new SKRect(0, 0, (float)Width * scale, (float)Height * scale), paint);
         }
 
 

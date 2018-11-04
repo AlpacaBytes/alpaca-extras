@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
+using Xamarin.Forms.Internals;
 
 namespace AlpacaExtras
 {
+    [Preserve(AllMembers = true)]
     public static class AlpacaExtras
     {
         internal static Assembly AssetsAssembly;

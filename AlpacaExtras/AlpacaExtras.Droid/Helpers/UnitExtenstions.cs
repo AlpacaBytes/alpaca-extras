@@ -1,9 +1,11 @@
 ﻿using Android.Content.Res;
+using Android.Runtime;
 using Android.Util;
 using System;
 
 namespace AlpacaExtras.Droid.Helpers
 {
+    [Preserve(AllMembers = true)]
     public static class UnitExtenstions
     {
         public static int DpToPixels(this double dp)

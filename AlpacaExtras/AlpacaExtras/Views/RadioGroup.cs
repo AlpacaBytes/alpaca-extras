@@ -6,11 +6,13 @@ using System.Collections.Specialized;
 using System.Runtime.CompilerServices;
 using System.Text;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
 namespace AlpacaExtras.Views
 {
     public class RadioGroup : StackLayout
     {
+        [Preserve(AllMembers = true)]
         public static readonly BindableProperty SelectedValueProperty =
             BindableProperty.Create(nameof(SelectedValue), typeof(object), typeof(RadioGroup), false, BindingMode.TwoWay);
 

@@ -1,8 +1,10 @@
 ﻿
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
 namespace AlpacaExtras.Effects
 {
+    [Preserve(AllMembers = true)]
     public class EntryPlaceholderTextEffect : RoutingEffect
     {
         public string FontFamily { get; set; }

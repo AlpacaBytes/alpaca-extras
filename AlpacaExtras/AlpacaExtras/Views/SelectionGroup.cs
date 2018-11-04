@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
 namespace AlpacaExtras.Views
 {
+    [Preserve(AllMembers = true)]
     public class SelectionGroup : StackLayout
     {
         public static readonly BindableProperty SelectedValuesProperty =
